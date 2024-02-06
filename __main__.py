@@ -5,7 +5,6 @@ import mimetypes
 import libtorrent as lt
 import os
 import subprocess
-# import magnetlinkdownloader
 
 
 headers3 = {
@@ -64,7 +63,7 @@ class nnt:
             else:
                 return "error uploading file contact admin"
 
-bot = telebot.TeleBot('6612044510:AAFdyJSzrmCwPSSm6SC56pp12eDyyYV0Ofc')
+bot = telebot.TeleBot('token')
 should_stop = False
 @bot.message_handler(commands=['start'])
 def start_message(message):
