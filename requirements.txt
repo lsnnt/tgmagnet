@@ -1,3 +1,4 @@
 requests
 libtorrent
-
+telebot
+mimetypes
