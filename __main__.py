@@ -6,7 +6,8 @@ import libtorrent as lt
 import os
 import subprocess
 
-
+path = "YOUR PATH HERE"
+token = "YOUR TOKEN HERE"
 headers3 = {
     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0',
     'Accept': 'application/json, text/plain, */*',
@@ -63,7 +64,7 @@ class nnt:
             else:
                 return "error uploading file contact admin"
 
-bot = telebot.TeleBot('token')
+bot = telebot.TeleBot(token)
 should_stop = False
 @bot.message_handler(commands=['start'])
 def start_message(message):
@@ -76,9 +77,9 @@ def echo_all(message):
 
     # try:
     magnet_link = message.text
-    h = lt.add_magnet_uri(ses, magnet_link, {'save_path': '/home/nnt/torrents/'})
+    h = lt.add_magnet_uri(ses, magnet_link, {'save_path': '/your/save/path/here'})
     s = h.status()  # Initialize s before the while loop
-    # file_directoryorfile = '/home/nnt/torrents/' + s.name
+    # file_directoryorfile = '{path}' + s.name
     while not s.is_seeding:
         s = h.status()
         state_str = ['लािन मे है', 'जाचा जा राहा है', 'मेतादाता दोनलोद किया जा राहा है', 'दोनलोद', 'खतम', 'खतम', 'न']
@@ -86,10 +87,10 @@ def echo_all(message):
         time.sleep(6)
     bot.send_message(message.chat.id, 'डाउनलाेड समाप्त हाे गया है।')
     bot.send_message(message.chat.id, 'अपलाेड कर रहे है...')
-    # torrent_directory = '/home/nnt/torrents/'
+    # torrent_directory = '{path}'
     # get only the files in the torrent directory
     # run find {torrent_directory} command and get the output
-    output = subprocess.check_output('find /home/nnt/torrents/', shell=True).decode('utf-8').split("\n")
+    output = subprocess.check_output('find '+path, shell=True).decode('utf-8').split("\n")
     for a in range(0,len(output)):
         try:
             bot.send_message(message.chat.id, nnt.upload(output[a]))
@@ -98,8 +99,8 @@ def echo_all(message):
             bot.send_message(message.chat.id, str(a))
         
         # finally:
-        #     os.system("rm -rf /home/nnt/torrents/*")
-    os.system("rm -rf /home/nnt/torrents/*")
+        #     os.system("rm -rf {path}*")
+    os.system(f"rm -rf {path}*")
 @bot.message_handler(commands=['stop'])
 def stop_Message(message):
     global should_stop
