@@ -13,12 +13,12 @@ pip3 install -r requirements.txt
 ```
 4) Then run the bot using
 ```
-python3 __main__.py
+python3 main.py
 ```
 Ctrl+C to exit
 If you want to run the bot in background
 ```
-python3 __main__.py & disown
+python3 main.py & disown
 ```
 
 ### I recommend to host it on a VPS with at least 2GB RAM
