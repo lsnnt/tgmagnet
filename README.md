@@ -6,7 +6,8 @@ git clone https://github.com/lsnnt/tgmagnet && cd tgmagnet
 ```
 2) To run the bot first set the necessary variables
 token should be your telegram bot token and path should be where the torrents are going to be downloaded
-https://github.com/lsnnt/tgmagnet/blob/0e4c9d68c48ab96e745ab3ba957ef2970c28bc47/__main__.py#L9-L10
+https://github.com/lsnnt/tgmagnet/blob/581d0cf96b1de5ed5741cb2df344941ed062336c/main.py#L9-L10
+https://github.com/lsnnt/tgmagnet/blob/581d0cf96b1de5ed5741cb2df344941ed062336c/main.py#L133
 4) Then install the necessary dependency using
 ```
 pip3 install -r requirements.txt
@@ -18,7 +19,7 @@ python3 main.py
 Ctrl+C to exit
 If you want to run the bot in background
 ```
-python3 main.py & disown
+nohup python3 main.py & disown
 ```
 
 ### I recommend to host it on a VPS with at least 2GB RAM
