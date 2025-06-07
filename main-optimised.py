@@ -6,8 +6,8 @@ import libtorrent as lt
 import os
 import subprocess
 
-path = "/home/debian/nnt/"
-token = "7968075017:AAFNwL5HrUaK0wui-7eIZg7Ye2xlHJXRLcY"
+path = "YOUR_PATH_HERE"
+token = "YOUR_TELEGRAM_BOT_TOKEN HERE"
 headers3 = {
     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0',
     'Accept': 'application/json, text/plain, */*',
@@ -130,7 +130,7 @@ def echo_all(message):
         upload_torrent_files(message, path)
         
         # Final cleanup step
-        os.system(f"rm -rf /home/debian/nnt/*")
+        os.system(f"rm -rf <ENTER PATH HERE>") 
     except Exception as e:
         bot.send_message(message.chat.id, f"An error occurred: {str(e)}")
 @bot.message_handler(commands=['stop'])
