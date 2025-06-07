@@ -6,6 +6,9 @@ git clone https://github.com/lsnnt/tgmagnet && cd tgmagnet
 ```
 2) To run the bot first set the necessary variables
 token should be your telegram bot token and path should be where the torrents are going to be downloaded
+<br>
+To get Telegram bot token generate a bot from [@BotFather](https://t.me/Botfather) on Telegram
+<br>
 https://github.com/lsnnt/tgmagnet/blob/581d0cf96b1de5ed5741cb2df344941ed062336c/main.py#L9-L10
 https://github.com/lsnnt/tgmagnet/blob/581d0cf96b1de5ed5741cb2df344941ed062336c/main.py#L133
 4) Then install the necessary dependency using
